@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB3F12C01FB72ABA004F1FDD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F12BF1FB72ABA004F1FDD /* GameModel.swift */; };
+		BBAFA1701FB76DC8002F2568 /* word_rus.txt in Resources */ = {isa = PBXBuildFile; fileRef = BBAFA16F1FB76DC8002F2568 /* word_rus.txt */; };
 		BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AD51FB7278700077653 /* AppDelegate.swift */; };
 		BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AD71FB7278700077653 /* ViewController.swift */; };
 		BBBF0ADB1FB7278700077653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0AD91FB7278700077653 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		3424E926BCD385488E9172A8 /* Pods_GameTimeKill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameTimeKill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		828A871ED80B7C86F114B2C6 /* Pods-GameTimeKill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTimeKill.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameTimeKill/Pods-GameTimeKill.release.xcconfig"; sourceTree = "<group>"; };
 		BB3F12BF1FB72ABA004F1FDD /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		BBAFA16F1FB76DC8002F2568 /* word_rus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_rus.txt; sourceTree = "<group>"; };
 		BBBF0AD21FB7278700077653 /* GameTimeKill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTimeKill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBF0AD51FB7278700077653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBF0AD71FB7278700077653 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			name = GameModel;
 			sourceTree = "<group>";
 		};
+		BBAFA1711FB76DCC002F2568 /* words */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFA16F1FB76DC8002F2568 /* word_rus.txt */,
+			);
+			name = words;
+			sourceTree = "<group>";
+		};
 		BBBF0AC91FB7278700077653 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		BBBF0AD41FB7278700077653 /* GameTimeKill */ = {
 			isa = PBXGroup;
 			children = (
+				BBAFA1711FB76DCC002F2568 /* words */,
 				BB3F12BE1FB72A8E004F1FDD /* GameModel */,
 				BBBF0AD51FB7278700077653 /* AppDelegate.swift */,
 				BBBF0AD71FB7278700077653 /* ViewController.swift */,
@@ -233,6 +244,7 @@
 				BBBF0AE01FB7278700077653 /* LaunchScreen.storyboard in Resources */,
 				BBBF0ADD1FB7278700077653 /* Assets.xcassets in Resources */,
 				BBBF0ADB1FB7278700077653 /* Main.storyboard in Resources */,
+				BBAFA1701FB76DC8002F2568 /* word_rus.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
