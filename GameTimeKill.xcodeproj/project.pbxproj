@@ -15,6 +15,7 @@
 		BBBF0AE01FB7278700077653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */; };
 		BBBF0AEB1FB7278700077653 /* GameTimeKillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */; };
 		CCF549510B807F2E6145E5FB /* Pods_GameTimeKill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424E926BCD385488E9172A8 /* Pods_GameTimeKill.framework */; };
+		E76BB1D11FB7342E002B8FBF /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BB1D01FB7342E002B8FBF /* DesignableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		BBBF0AE61FB7278700077653 /* GameTimeKillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameTimeKillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeKillTests.swift; sourceTree = "<group>"; };
 		BBBF0AEC1FB7278700077653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76BB1D01FB7342E002B8FBF /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				BBBF0ADC1FB7278700077653 /* Assets.xcassets */,
 				BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */,
 				BBBF0AE11FB7278700077653 /* Info.plist */,
+				E76BB1D21FB73446002B8FBF /* Designable */,
 			);
 			path = GameTimeKill;
 			sourceTree = "<group>";
@@ -129,6 +132,14 @@
 				BBBF0AEC1FB7278700077653 /* Info.plist */,
 			);
 			path = GameTimeKillTests;
+			sourceTree = "<group>";
+		};
+		E76BB1D21FB73446002B8FBF /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				E76BB1D01FB7342E002B8FBF /* DesignableView.swift */,
+			);
+			name = Designable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76BB1D11FB7342E002B8FBF /* DesignableView.swift in Sources */,
 				BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */,
 				BB3F12C01FB72ABA004F1FDD /* GameModel.swift in Sources */,
 				BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */,
