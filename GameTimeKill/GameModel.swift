@@ -24,7 +24,8 @@ class GameModel {
     }
     
     public func getMatrix(matrixIndex: Int) -> [String]{
-        return
+        let  v = [String]()
+        return (v)
     }
     
 }
