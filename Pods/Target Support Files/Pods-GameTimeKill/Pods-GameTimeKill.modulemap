@@ -1,0 +1,6 @@
+framework module Pods_GameTimeKill {
+  umbrella header "Pods-GameTimeKill-umbrella.h"
+
+  export *
+  module * { export * }
+}

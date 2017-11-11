@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AD51FB7278700077653 /* AppDelegate.swift */; };
+		BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AD71FB7278700077653 /* ViewController.swift */; };
+		BBBF0ADB1FB7278700077653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0AD91FB7278700077653 /* Main.storyboard */; };
+		BBBF0ADD1FB7278700077653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0ADC1FB7278700077653 /* Assets.xcassets */; };
+		BBBF0AE01FB7278700077653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */; };
+		BBBF0AEB1FB7278700077653 /* GameTimeKillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */; };
+		CCF549510B807F2E6145E5FB /* Pods_GameTimeKill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424E926BCD385488E9172A8 /* Pods_GameTimeKill.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBBF0AE71FB7278700077653 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBBF0ACA1FB7278700077653 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBBF0AD11FB7278700077653;
+			remoteInfo = GameTimeKill;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29BC680042648774CAF1507D /* Pods-GameTimeKill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTimeKill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameTimeKill/Pods-GameTimeKill.debug.xcconfig"; sourceTree = "<group>"; };
+		3424E926BCD385488E9172A8 /* Pods_GameTimeKill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameTimeKill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		828A871ED80B7C86F114B2C6 /* Pods-GameTimeKill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTimeKill.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameTimeKill/Pods-GameTimeKill.release.xcconfig"; sourceTree = "<group>"; };
+		BBBF0AD21FB7278700077653 /* GameTimeKill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTimeKill.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBBF0AD51FB7278700077653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBBF0AD71FB7278700077653 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBBF0ADA1FB7278700077653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBBF0ADC1FB7278700077653 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBBF0ADF1FB7278700077653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBBF0AE11FB7278700077653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBBF0AE61FB7278700077653 /* GameTimeKillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameTimeKillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeKillTests.swift; sourceTree = "<group>"; };
+		BBBF0AEC1FB7278700077653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBBF0ACF1FB7278700077653 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF549510B807F2E6145E5FB /* Pods_GameTimeKill.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBBF0AE31FB7278700077653 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13CE5ADD8794CFC164C4FE09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29BC680042648774CAF1507D /* Pods-GameTimeKill.debug.xcconfig */,
+				828A871ED80B7C86F114B2C6 /* Pods-GameTimeKill.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		82F34291995FFC38041682EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3424E926BCD385488E9172A8 /* Pods_GameTimeKill.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBBF0AC91FB7278700077653 = {
+			isa = PBXGroup;
+			children = (
+				BBBF0AD41FB7278700077653 /* GameTimeKill */,
+				BBBF0AE91FB7278700077653 /* GameTimeKillTests */,
+				BBBF0AD31FB7278700077653 /* Products */,
+				13CE5ADD8794CFC164C4FE09 /* Pods */,
+				82F34291995FFC38041682EB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BBBF0AD31FB7278700077653 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF0AD21FB7278700077653 /* GameTimeKill.app */,
+				BBBF0AE61FB7278700077653 /* GameTimeKillTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBBF0AD41FB7278700077653 /* GameTimeKill */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF0AD51FB7278700077653 /* AppDelegate.swift */,
+				BBBF0AD71FB7278700077653 /* ViewController.swift */,
+				BBBF0AD91FB7278700077653 /* Main.storyboard */,
+				BBBF0ADC1FB7278700077653 /* Assets.xcassets */,
+				BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */,
+				BBBF0AE11FB7278700077653 /* Info.plist */,
+			);
+			path = GameTimeKill;
+			sourceTree = "<group>";
+		};
+		BBBF0AE91FB7278700077653 /* GameTimeKillTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */,
+				BBBF0AEC1FB7278700077653 /* Info.plist */,
+			);
+			path = GameTimeKillTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBBF0AD11FB7278700077653 /* GameTimeKill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBBF0AEF1FB7278700077653 /* Build configuration list for PBXNativeTarget "GameTimeKill" */;
+			buildPhases = (
+				B04EAC504C528764C154C936 /* [CP] Check Pods Manifest.lock */,
+				BBBF0ACE1FB7278700077653 /* Sources */,
+				BBBF0ACF1FB7278700077653 /* Frameworks */,
+				BBBF0AD01FB7278700077653 /* Resources */,
+				9DD49538F73D944FFCF4FC1D /* [CP] Embed Pods Frameworks */,
+				CD8406EDB62A2F6A6232C0FF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameTimeKill;
+			productName = GameTimeKill;
+			productReference = BBBF0AD21FB7278700077653 /* GameTimeKill.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBBF0AE51FB7278700077653 /* GameTimeKillTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBBF0AF21FB7278700077653 /* Build configuration list for PBXNativeTarget "GameTimeKillTests" */;
+			buildPhases = (
+				BBBF0AE21FB7278700077653 /* Sources */,
+				BBBF0AE31FB7278700077653 /* Frameworks */,
+				BBBF0AE41FB7278700077653 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBBF0AE81FB7278700077653 /* PBXTargetDependency */,
+			);
+			name = GameTimeKillTests;
+			productName = GameTimeKillTests;
+			productReference = BBBF0AE61FB7278700077653 /* GameTimeKillTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBBF0ACA1FB7278700077653 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "David Minasyan";
+				TargetAttributes = {
+					BBBF0AD11FB7278700077653 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 72MHAGL49V;
+						ProvisioningStyle = Automatic;
+					};
+					BBBF0AE51FB7278700077653 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 72MHAGL49V;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BBBF0AD11FB7278700077653;
+					};
+				};
+			};
+			buildConfigurationList = BBBF0ACD1FB7278700077653 /* Build configuration list for PBXProject "GameTimeKill" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBBF0AC91FB7278700077653;
+			productRefGroup = BBBF0AD31FB7278700077653 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBBF0AD11FB7278700077653 /* GameTimeKill */,
+				BBBF0AE51FB7278700077653 /* GameTimeKillTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBBF0AD01FB7278700077653 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBBF0AE01FB7278700077653 /* LaunchScreen.storyboard in Resources */,
+				BBBF0ADD1FB7278700077653 /* Assets.xcassets in Resources */,
+				BBBF0ADB1FB7278700077653 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBBF0AE41FB7278700077653 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DD49538F73D944FFCF4FC1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameTimeKill/Pods-GameTimeKill-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B04EAC504C528764C154C936 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8406EDB62A2F6A6232C0FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameTimeKill/Pods-GameTimeKill-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBBF0ACE1FB7278700077653 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */,
+				BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBBF0AE21FB7278700077653 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBBF0AEB1FB7278700077653 /* GameTimeKillTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBBF0AE81FB7278700077653 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBBF0AD11FB7278700077653 /* GameTimeKill */;
+			targetProxy = BBBF0AE71FB7278700077653 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBBF0AD91FB7278700077653 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBBF0ADA1FB7278700077653 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBBF0ADF1FB7278700077653 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBBF0AED1FB7278700077653 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBBF0AEE1FB7278700077653 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBBF0AF01FB7278700077653 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29BC680042648774CAF1507D /* Pods-GameTimeKill.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 72MHAGL49V;
+				INFOPLIST_FILE = GameTimeKill/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.davidmd.GameTimeKill;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BBBF0AF11FB7278700077653 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828A871ED80B7C86F114B2C6 /* Pods-GameTimeKill.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 72MHAGL49V;
+				INFOPLIST_FILE = GameTimeKill/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.davidmd.GameTimeKill;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BBBF0AF31FB7278700077653 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 72MHAGL49V;
+				INFOPLIST_FILE = GameTimeKillTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.davidmd.GameTimeKillTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameTimeKill.app/GameTimeKill";
+			};
+			name = Debug;
+		};
+		BBBF0AF41FB7278700077653 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 72MHAGL49V;
+				INFOPLIST_FILE = GameTimeKillTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.davidmd.GameTimeKillTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameTimeKill.app/GameTimeKill";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBBF0ACD1FB7278700077653 /* Build configuration list for PBXProject "GameTimeKill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBBF0AED1FB7278700077653 /* Debug */,
+				BBBF0AEE1FB7278700077653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBBF0AEF1FB7278700077653 /* Build configuration list for PBXNativeTarget "GameTimeKill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBBF0AF01FB7278700077653 /* Debug */,
+				BBBF0AF11FB7278700077653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BBBF0AF21FB7278700077653 /* Build configuration list for PBXNativeTarget "GameTimeKillTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBBF0AF31FB7278700077653 /* Debug */,
+				BBBF0AF41FB7278700077653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBBF0ACA1FB7278700077653 /* Project object */;
+}
