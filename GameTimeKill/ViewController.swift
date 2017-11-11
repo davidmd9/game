@@ -16,14 +16,56 @@ class ViewController: UIViewController {
     @IBOutlet weak var tab4_View: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var numStr = 0
+    
+    var strViewTab1 = [UIView]()
+    var gameModel = GameModel()
+    var words = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsKeyboard()
+        words = gameModel.createField(letter: "А")
+        getAllStrTable(table: tab1_View)
+        getAllStrTable(table: tab2_View)
+        getAllStrTable(table: tab3_View)
+        getAllStrTable(table: tab4_View)
+        
     }
     
+    //MARK: - Получаем все строки(view) со всех таблиц и каждой view задаем tag = numStr
+    func getAllStrTable(table: UIView){
+        for view in table.subviews{
+            view.tag = numStr
+            setTagTextField(strView: view)
+        }
+        numStr+=1
+    }
     
+    //MARK: - Получаем все textField из строк view, задаем начальные значения textField и устанавливаем tag = numCol in string View
+    func setTagTextField(strView: UIView){
+        var numCol = 0
+        
+        for letterView in strView.subviews{
+            let textField = letterView.subviews[0] as! UITextField
+            textField.tag = numCol
+            textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            if words[numStr][numCol] != " "{
+                textField.text = words[numStr][numCol]
+            }
+            numCol+=1
+        }
+    }
     
+    func textFieldDidChange(_ textField: UITextField) {
+        if textField.text != ""{
+            let value = textField.text?[(textField.text?.characters.count)!-1]
+            textField.text = value
+        }
+        textField.text = textField.text?.uppercased()
+//        gameModel.addLetter(letter: textField.text, posX: textField.tag, posY: textField.superview?.tag, tableIndex: <#T##Int#>)
+    }
     
     
     //MARK: - Настройка дейстий с клавиатурой
@@ -83,5 +125,29 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension String{
+    subscript (i:Int) -> String?{
+        if characters.count > i && i >= 0{
+            return String(Array(self.characters)[i])
+        }
+        return nil
+    }
+    
+    subscript (r : Range<Int>) -> String?{
+        guard r.lowerBound>=0 && r.upperBound <= self.characters.count && r.lowerBound <= r.upperBound else {return nil}
+        let start = self.index(startIndex, offsetBy: r.lowerBound)
+        let end = self.index(startIndex, offsetBy: r.upperBound)
+        return self[Range(start ..< end)]
+        
+    }
+    
+    func indexAt(i : Int) -> String.Index?{
+        if characters.count > i{
+            return index(self.startIndex, offsetBy: i)
+        }
+        return nil
+    }
 }
 
