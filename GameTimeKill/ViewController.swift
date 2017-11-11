@@ -72,12 +72,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if textField.text == ""{
             textField.text = " "
         }
-        let (wordsDone, blockDone, gameDone ) = gameModel.addLetter(letter: textField.text!, letterNumber: textField.tag, wordNumber: (textField.superview?.superview?.tag)!)
+        let (wordsDone, _, gameDone ) = gameModel.addLetter(letter: textField.text!, letterNumber: textField.tag, wordNumber: (textField.superview?.superview?.tag)!)
         if wordsDone{
             textField.superview?.superview?.backgroundColor = UIColor.lightGray
             setAllEdetingTextFiled(view: textField.superview!.superview!)
         }
         _ = moveToNextLetter(textField: textField)
+        
+        if gameDone {
+            print("ура")
+        }
     }
     
     func  setAllEdetingTextFiled(view: UIView){

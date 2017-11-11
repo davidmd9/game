@@ -214,10 +214,10 @@ fileprivate class GameField {
     public func isFieldDone() -> Bool{
         for w in words!{
             if !w.checkIfWordExists(){
-                return true
+                return false
             }
         }
-        return false
+        return true
     }
     
 }
