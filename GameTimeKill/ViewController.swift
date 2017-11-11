@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tab1_View: UIView!
     @IBOutlet weak var tab2_View: UIView!
@@ -39,8 +39,8 @@ class ViewController: UIViewController {
         for view in table.subviews{
             view.tag = numStr
             setTagTextField(strView: view)
+            numStr+=1
         }
-        numStr+=1
     }
     
     //MARK: - Получаем все textField из строк view, задаем начальные значения textField и устанавливаем tag = numCol in string View
@@ -50,9 +50,14 @@ class ViewController: UIViewController {
         for letterView in strView.subviews{
             let textField = letterView.subviews[0] as! UITextField
             textField.tag = numCol
-            textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             if words[numStr][numCol] != " "{
                 textField.text = words[numStr][numCol]
+                textField.isEnabled = false
+                textField.superview?.backgroundColor = UIColor.yellow
+            }
+            else{
+                textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+                textField.delegate = self
             }
             numCol+=1
         }
@@ -64,8 +69,25 @@ class ViewController: UIViewController {
             textField.text = value
         }
         textField.text = textField.text?.uppercased()
-//        gameModel.addLetter(letter: textField.text, posX: textField.tag, posY: textField.superview?.tag, tableIndex: <#T##Int#>)
+        if textField.text == ""{
+            textField.text = " "
+        }
+        let (wordsDone, blockDone, gameDone ) = gameModel.addLetter(letter: textField.text!, letterNumber: textField.tag, wordNumber: (textField.superview?.superview?.tag)!)
+        if wordsDone{
+            textField.superview?.superview?.backgroundColor = UIColor.lightGray
+            setAllEdetingTextFiled(view: textField.superview!.superview!)
+        }
+        _ = moveToNextLetter(textField: textField)
     }
+    
+    func  setAllEdetingTextFiled(view: UIView){
+        for view in view.subviews{
+            let textFiled = view.subviews[0] as! UITextField
+            textFiled.isEnabled = false
+        }
+    }
+    
+    
     
     
     //MARK: - Настройка дейстий с клавиатурой
@@ -99,7 +121,7 @@ class ViewController: UIViewController {
     }
     
     @objc func kbWillHide(_ notification: Notification){
-        scrollView.contentOffset = CGPoint.zero
+//        scrollView.contentOffset = CGPoint.zero
     }
     
     @objc func dismissKeyboard() {
@@ -109,10 +131,26 @@ class ViewController: UIViewController {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //скрыть keyboard
+        return moveToNextLetter(textField: textField)
+    }
+    
+    func moveToNextLetter(textField: UITextField) -> Bool{
+        if textField.tag < ((textField.superview?.superview?.subviews.count)!-1) {
+            var index = 1
+            if !(textField.superview?.superview?.subviews[textField.tag+index].subviews[0] as! UITextField).isEnabled{
+                if (textField.superview?.superview?.subviews.count)!-1 > textField.tag+index{
+                    index = 2
+                }
+            }
+            (textField.superview?.superview?.subviews[textField.tag+index].subviews[0] as! UITextField).becomeFirstResponder()
+        
+            return true
+        }
         self.view.endEditing(true)
         return false
     }
+    
+    
     
     func removeNotificationKeyBoard(){
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)

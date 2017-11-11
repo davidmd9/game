@@ -159,9 +159,9 @@ fileprivate class GameField {
         for sz in sizes{
             if sz.size == word.characters.count{
                 let startIndex = sz.startIndex
-                let endIndex = sz.startIndex+sz.endIndex
+                let endIndex = sz.endIndex
                 var i = startIndex
-                while i<endIndex {
+                while i<=endIndex {
                     if (words?[i].getWord() == word){
                         return true
                     }
