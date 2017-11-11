@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 
 
-class GameWord {
+fileprivate class GameWord {
     var word: String = ""
     var defaultWord: String = ""
     var length: Int = 0
@@ -18,6 +19,8 @@ class GameWord {
     var isInit: Bool = false
     var isFilled: Bool = false
     
+    
+    // One word initialization
     public init(with letter: String, index: Int, length: Int) {
         var i = 0
         while i<length {
@@ -34,11 +37,16 @@ class GameWord {
         isInit = true
     }
     
+    // returns string value of word
     public func getWord() -> String{
         return word
     }
     
+    // adds letter to specified position
     public func addLetter(letter: String, position: Int) -> Bool{
+        if (isFilled){
+            return false
+        }
         if (position != letterIndex){
             var chars = Array(word.characters)
             let char2 = Array(letter.characters)
@@ -50,7 +58,9 @@ class GameWord {
         }
     }
     
+    // trys to add letter
     public func tryAddLetter(letter: String, position: Int) -> String?{
+        
         if (position != letterIndex){
             var chars = Array(word.characters)
             let char2 = Array(letter.characters)
@@ -63,36 +73,76 @@ class GameWord {
         
     }
     
+    // check if word exists in dictionary
+    public func checkIfWordExists() -> Bool{
+        if isFilled {
+            return isFilled
+        }
+        if (GameField.dict == nil) {
+            GameField.reloadDict()
+        }
+        for w in GameField.dict!{
+            if w == self.word {
+                isFilled = true
+                return true
+            }
+        }
+        return false
+    }
+    
 }
 
-class GameField {
+fileprivate class GameField {
     var words : [GameWord]?
     var maxFiled = 0
     var minField = 0
     var sizes = [(size: Int, startIndex: Int, endIndex: Int)]()
+    static let filePath = Bundle.main.url(forResource: "word_rus", withExtension: "txt")
+    static var dict : [String]?
     
-    public init(with letter: String, maxField: Int, minField: Int){
-        if (maxField>minField){
-            words = [GameWord]()
-            var i = maxField;
-            var line = 0;
-            while i >= minField {
-                var j = 0
-                sizes.append((size: i, startIndex: line, endIndex: line+i-1))
-                while j < i {
-                    let w:GameWord = GameWord(with: letter, index: j, length: i)
-                    words?.append(w)
-                    line += 1
-                    j += 1
-                }
-                print(i)
-                i -= 1
+    static let rusLoc = Locale(identifier: "ru_RU")
+
+    
+    // static method to reload data
+    public static func reloadDict() -> Bool{
+        do {
+            if (GameField.dict == nil){
+                try GameField.dict = String(contentsOf: GameField.filePath!).uppercased(with: GameField.rusLoc).components(separatedBy: "\n")
             }
-            self.maxFiled = maxField
-            self.minField = minField
+            return true
+        } catch {
+            return false
         }
     }
     
+    // Initialization
+    public init(with letter: String, maxField: Int, minField: Int){
+        if (maxField>minField){
+                if (GameField.dict == nil){
+                    GameField.reloadDict()
+                }
+                
+                words = [GameWord]()
+                var i = maxField;
+                var line = 0;
+                while i >= minField {
+                    var j = 0
+                    sizes.append((size: i, startIndex: line, endIndex: line+i-1))
+                    while j < i {
+                        let w:GameWord = GameWord(with: letter, index: j, length: i)
+                        words?.append(w)
+                        line += 1
+                        j += 1
+                    }
+                    print(i)
+                    i -= 1
+                }
+                self.maxFiled = maxField
+                self.minField = minField
+        }
+    }
+    
+    // returns tring array
     public func getStringArray() -> [String]{
         var res = [String]()
         guard words != nil else{
@@ -104,7 +154,8 @@ class GameField {
         return res
     }
     
-    public func checkWordExistance(word: String) -> Bool{
+    // check if words are equal
+    public func checkSameWordExistance(word: String) -> Bool{
         for sz in sizes{
             if sz.size == word.characters.count{
                 let startIndex = sz.startIndex
@@ -122,29 +173,85 @@ class GameField {
         return false
     }
     
+    // adds letter
+    public func addLetter(letter: String, letterNumber: Int, wordNumber: Int) -> Bool{
+        let s = words?[wordNumber].tryAddLetter(letter: letter, position: letterNumber)
+        if !checkSameWordExistance(word: s!){
+            if (words?[wordNumber].addLetter(letter: letter, position: letterNumber))! {
+                return true
+            }
+        }
+        return false
+    }
+    
+    // chek if word is done
+    public func isWordDone(wordNumber: Int) -> Bool {
+        if ( (words?[wordNumber])!).checkIfWordExists() {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    // check if block is done
+    public func isBlockDone(wordNumber: Int) -> Bool{
+        for s in sizes{
+            if wordNumber >= s.startIndex && wordNumber < s.endIndex{
+                var i = 0
+                while  i<s.endIndex {
+                    if !(words?[i].checkIfWordExists())! {
+                        return false
+                    }
+                    i += 1
+                }
+                return true
+            }
+        }
+        return false
+    }
+    
+    // check if field is done
+    public func isFieldDone() -> Bool{
+        for w in words!{
+            if !w.checkIfWordExists(){
+                return true
+            }
+        }
+        return false
+    }
+    
 }
 
 class GameModel {
     
     let rusLoc = Locale(identifier: "ru_RU")
-    var game : GameField?
+    fileprivate var game : GameField?
+    
+    let tf = UITextField()
     
     
     public func createField(letter:String) -> [String]{
-        game = GameField(with: letter, maxField: 6, minField: 3)
+        let ltr = letter.uppercased(with: rusLoc)
+        game = GameField(with: ltr, maxField: 6, minField: 3)
         guard game != nil else {
             return []
         }
         return game!.getStringArray()
     }
     
-    public func addLetter(letter: String, posX: Int, posY: Int, tableIndex: Int) -> (Bool, Bool, Bool){
-        return (true, true, false)
+    public func addLetter(letter: String, letterNumber: Int, wordNumber: Int) -> (Bool, Bool, Bool){
+        let ltr = letter.uppercased(with: rusLoc)
+        if (game?.addLetter(letter: ltr, letterNumber: letterNumber, wordNumber: wordNumber))!{
+            let wordDone = game?.isWordDone(wordNumber: wordNumber)
+            let blockDone = game?.isBlockDone(wordNumber: wordNumber)
+            let gameDone = game?.isFieldDone()
+            return (wordDone!, blockDone!, gameDone!)
+        }
+        return (false, false, false)
     }
     
-    public func getMatrix(matrixIndex: Int) -> [String]{
-        let  v = [String]()
-        return (v)
+    public func getMatrix() -> [String]{
+        return (game?.getStringArray())!
     }
     
 }
