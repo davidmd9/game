@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB3F12C01FB72ABA004F1FDD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F12BF1FB72ABA004F1FDD /* GameModel.swift */; };
 		BBAFA1701FB76DC8002F2568 /* word_rus.txt in Resources */ = {isa = PBXBuildFile; fileRef = BBAFA16F1FB76DC8002F2568 /* word_rus.txt */; };
+		BBAFA1731FB79C3D002F2568 /* UserLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA1721FB79C3D002F2568 /* UserLetters.swift */; };
 		BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AD51FB7278700077653 /* AppDelegate.swift */; };
 		BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AD71FB7278700077653 /* ViewController.swift */; };
 		BBBF0ADB1FB7278700077653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0AD91FB7278700077653 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		828A871ED80B7C86F114B2C6 /* Pods-GameTimeKill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTimeKill.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameTimeKill/Pods-GameTimeKill.release.xcconfig"; sourceTree = "<group>"; };
 		BB3F12BF1FB72ABA004F1FDD /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		BBAFA16F1FB76DC8002F2568 /* word_rus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_rus.txt; sourceTree = "<group>"; };
+		BBAFA1721FB79C3D002F2568 /* UserLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLetters.swift; sourceTree = "<group>"; };
 		BBBF0AD21FB7278700077653 /* GameTimeKill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTimeKill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBF0AD51FB7278700077653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBBF0AD71FB7278700077653 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3F12BF1FB72ABA004F1FDD /* GameModel.swift */,
+				BBAFA1721FB79C3D002F2568 /* UserLetters.swift */,
 			);
 			name = GameModel;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				E76BB1D11FB7342E002B8FBF /* DesignableView.swift in Sources */,
 				BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */,
+				BBAFA1731FB79C3D002F2568 /* UserLetters.swift in Sources */,
 				BB3F12C01FB72ABA004F1FDD /* GameModel.swift in Sources */,
 				BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */,
 			);
