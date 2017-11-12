@@ -22,6 +22,9 @@
 		BBBF0AE01FB7278700077653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */; };
 		BBBF0AEB1FB7278700077653 /* GameTimeKillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */; };
 		CCF549510B807F2E6145E5FB /* Pods_GameTimeKill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424E926BCD385488E9172A8 /* Pods_GameTimeKill.framework */; };
+		E7105B831FB862CA000740B9 /* NextLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7105B821FB862CA000740B9 /* NextLevelViewController.swift */; };
+		E7105B871FB86A16000740B9 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7105B861FB86A16000740B9 /* LevelViewController.swift */; };
+		E7105B891FB86A2E000740B9 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7105B881FB86A2E000740B9 /* LevelTableViewCell.swift */; };
 		E76BB1D11FB7342E002B8FBF /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BB1D01FB7342E002B8FBF /* DesignableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		BBBF0AE61FB7278700077653 /* GameTimeKillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameTimeKillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBF0AEA1FB7278700077653 /* GameTimeKillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeKillTests.swift; sourceTree = "<group>"; };
 		BBBF0AEC1FB7278700077653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7105B821FB862CA000740B9 /* NextLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLevelViewController.swift; sourceTree = "<group>"; };
+		E7105B861FB86A16000740B9 /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		E7105B881FB86A2E000740B9 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		E76BB1D01FB7342E002B8FBF /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,15 +146,12 @@
 		BBBF0AD41FB7278700077653 /* GameTimeKill */ = {
 			isa = PBXGroup;
 			children = (
+				BBBF0AD91FB7278700077653 /* Main.storyboard */,
 				BBAFA1711FB76DCC002F2568 /* res */,
 				BB3F12BE1FB72A8E004F1FDD /* GameModel */,
-				BBBF0AD51FB7278700077653 /* AppDelegate.swift */,
-				BBAFA1761FB8486B002F2568 /* SettingsViewController.swift */,
-				BBBF0AD71FB7278700077653 /* ViewController.swift */,
-				BBBF0AD91FB7278700077653 /* Main.storyboard */,
-				BBBF0ADC1FB7278700077653 /* Assets.xcassets */,
-				BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */,
-				BBBF0AE11FB7278700077653 /* Info.plist */,
+				E7105B8A1FB86BD3000740B9 /* Controllers */,
+				E7105B8B1FB88B4F000740B9 /* Cells */,
+				E7105B8C1FB88B85000740B9 /* Supporting files */,
 				E76BB1D21FB73446002B8FBF /* Designable */,
 			);
 			path = GameTimeKill;
@@ -161,6 +164,36 @@
 				BBBF0AEC1FB7278700077653 /* Info.plist */,
 			);
 			path = GameTimeKillTests;
+			sourceTree = "<group>";
+		};
+		E7105B8A1FB86BD3000740B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF0AD71FB7278700077653 /* ViewController.swift */,
+				E7105B861FB86A16000740B9 /* LevelViewController.swift */,
+				E7105B821FB862CA000740B9 /* NextLevelViewController.swift */,
+				BBAFA1761FB8486B002F2568 /* SettingsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E7105B8B1FB88B4F000740B9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E7105B881FB86A2E000740B9 /* LevelTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		E7105B8C1FB88B85000740B9 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF0AD51FB7278700077653 /* AppDelegate.swift */,
+				BBBF0ADE1FB7278700077653 /* LaunchScreen.storyboard */,
+				BBBF0ADC1FB7278700077653 /* Assets.xcassets */,
+				BBBF0AE11FB7278700077653 /* Info.plist */,
+			);
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 		E76BB1D21FB73446002B8FBF /* Designable */ = {
@@ -341,7 +374,10 @@
 				E76BB1D11FB7342E002B8FBF /* DesignableView.swift in Sources */,
 				BBBF0AD81FB7278700077653 /* ViewController.swift in Sources */,
 				BBAFA1731FB79C3D002F2568 /* UserLetters.swift in Sources */,
+				E7105B871FB86A16000740B9 /* LevelViewController.swift in Sources */,
 				BB3F12C01FB72ABA004F1FDD /* GameModel.swift in Sources */,
+				E7105B891FB86A2E000740B9 /* LevelTableViewCell.swift in Sources */,
+				E7105B831FB862CA000740B9 /* NextLevelViewController.swift in Sources */,
 				BBBF0AD61FB7278700077653 /* AppDelegate.swift in Sources */,
 				BBAFA1771FB8486B002F2568 /* SettingsViewController.swift in Sources */,
 			);

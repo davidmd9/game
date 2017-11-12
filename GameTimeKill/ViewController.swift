@@ -18,24 +18,49 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tab3_View: UIView!
     @IBOutlet weak var tab4_View: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var time_Label: UILabel!
     
     var numStr = 0
+    var timeBegin : Int64 = 0
     
     var strViewTab1 = [UIView]()
     var gameModel = GameModel()
     var words = [String]()
     var player : AVAudioPlayer?
+    var level : Int = 0
+    let letters = UserLetters.getInstance()
+    
+    var gameTimer: Timer!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsKeyboard()
-        words = gameModel.createField(letter: "А")
+        words = gameModel.createField(letter: letters.getKeys().aLet[level].letter.uppercased())
         getAllStrTable(table: tab1_View)
         getAllStrTable(table: tab2_View)
         getAllStrTable(table: tab3_View)
         getAllStrTable(table: tab4_View)
         
+        if timeBegin == 0{
+           timeBegin = Int64(Date().millisecondsSince1970)
+        }
+        
+        runTimedCode()
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+    }
+
+    func runTimedCode(){
+        time_Label.text = convertMsecToDate(msec: (Int64(Date().millisecondsSince1970)-timeBegin))
+    }
+    
+    func convertMsecToDate(msec: Int64) -> String{
+        let sec = msec/1000
+        let date = Date(timeIntervalSince1970: TimeInterval(sec))
+        let dateFormmat = DateFormatter()
+        dateFormmat.dateFormat = "HH:mm:ss"
+        dateFormmat.timeZone = TimeZone.init(identifier: "UTC")
+        return dateFormmat.string(from: date)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,11 +123,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if wordsDone{
 //            textField.superview?.superview?.backgroundColor = UIColor.lightGray
             setAllEdetingTextFiled(view: textField.superview!.superview!)
+            //!!!!!!!!!!!!!!!!!!!
+            nextLevel()
         }
         _ = moveToNextLetter(textField: textField)
         
         if gameDone {
-            print("ура")
+            nextLevel()
         }
     }
     
@@ -113,6 +140,50 @@ class ViewController: UIViewController, UITextFieldDelegate {
             textFiled.isEnabled = false
         }
     }
+    
+    
+    func nextLevel(){
+        if level < letters.getKeys().aLet.count-1{
+            saveLavelUserDef()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "NextLevelID") as! NextLevelViewController
+            controller.level = level + 1
+            controller.timeBegin = timeBegin
+            self.present(controller, animated: true, completion: nil)
+        }
+        if gameTimer.isValid{
+            gameTimer.invalidate()
+        }
+    }
+    
+    func saveLavelUserDef(){
+       _ = letters.openLetter(letter: letters.getKeys().aLet[level+1].letter)
+    }
+    
+    func showAlert(){
+        let alertController = UIAlertController(title: "Внимание", message: "Вы действительно хотите завершить игру?", preferredStyle: .alert)
+        let actionYes = UIAlertAction(title: "Да", style: .default) { (UIAlertAction) in
+            self.mainActivity_Transition()
+        }
+        let actionNo = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
+        alertController.addAction(actionYes)
+        alertController.addAction(actionNo)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func mainActivity_Transition(){
+        if gameTimer.isValid{
+            gameTimer.invalidate()
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainVCID")
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func breakGame(_ sender: UIButton) {
+        showAlert()
+    }
+    
     
     
     
@@ -231,4 +302,15 @@ extension String{
         return nil
     }
 }
+
+extension Date {
+    var millisecondsSince1970:Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
+    }
+}
+
 
