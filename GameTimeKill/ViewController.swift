@@ -13,6 +13,7 @@ import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var main_View: UIView!
     @IBOutlet weak var tab1_View: UIView!
     @IBOutlet weak var tab2_View: UIView!
     @IBOutlet weak var tab3_View: UIView!
@@ -35,6 +36,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+        statusBar?.backgroundColor = UIColor.clear
+        
         settingsKeyboard()
         words = gameModel.createField(letter: letters.getKeys().aLet[level].letter.uppercased())
         getAllStrTable(table: tab1_View)
