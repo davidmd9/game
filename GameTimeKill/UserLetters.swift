@@ -21,6 +21,7 @@ class UserLetters {
     private static let ltrs = ["А","О","Е","У","И","Д","В","Р","М","К","Л","Х","З","С","Т","Ч","Я","З"]
     private var letters = [aLetter]()
     
+    //letter initializer
     private func initLetters() -> [aLetter]{
         var letters = [aLetter]()
         for lt in UserLetters.ltrs {
@@ -31,6 +32,7 @@ class UserLetters {
         return letters
     }
     
+    // private constructor
     private init() {
         let defaults = UserDefaults.standard
         if (defaults.array(forKey: UserLetters.KEY) == nil){
@@ -39,6 +41,7 @@ class UserLetters {
         letters = defaults.array(forKey: UserLetters.KEY) as! [aLetter]
     }
     
+    // return keys
     public func getKeys() -> [aLetter]{
         if (letters.count > 0){
             letters = UserDefaults.standard.array(forKey: UserLetters.KEY) as! [aLetter]
@@ -46,6 +49,7 @@ class UserLetters {
         return letters
     }
     
+    // return instance of object
     public static func getInstance() -> UserLetters{
         if (instance != nil){
             return instance!
@@ -55,11 +59,13 @@ class UserLetters {
         }
     }
     
+    // записать буквы
     private func writeLetters(){
         let defaults = UserDefaults.standard
         defaults.set(letters, forKey: UserLetters.KEY)
     }
     
+    // open letter to user
     public func openLetter(letter: String) -> Bool{
         var i = 0
         while i < letters.count {
