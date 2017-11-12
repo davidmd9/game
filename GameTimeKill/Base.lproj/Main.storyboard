@@ -155,31 +155,10 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-9V-Uhr">
-                                        <rect key="frame" x="0.0" y="-20" width="320" height="1110"/>
+                                        <rect key="frame" x="0.0" y="-20" width="320" height="1093"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arnament" translatesAutoresizingMaskIntoConstraints="NO" id="lf9-lV-62X">
-                                                <rect key="frame" x="0.0" y="44" width="320" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="RCY-14-41s"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kL-FP-oUh">
-                                                <rect key="frame" x="126" y="80" width="67" height="25.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="67" id="nsG-hG-i77"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAC-hR-fZD">
-                                                <rect key="frame" x="22" y="113" width="276" height="30"/>
-                                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="26"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjw-Xf-WZY">
-                                                <rect key="frame" x="16" y="149" width="288" height="288"/>
+                                                <rect key="frame" x="16" y="132" width="288" height="288"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-v2-0Iv">
                                                         <rect key="frame" x="0.0" y="3" width="288" height="48"/>
@@ -1449,7 +1428,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20Q-we-4Wm">
-                                                <rect key="frame" x="64" y="431" width="240" height="240"/>
+                                                <rect key="frame" x="64" y="414" width="240" height="240"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ8-cC-ItY">
                                                         <rect key="frame" x="0.0" y="3" width="240" height="48"/>
@@ -2344,7 +2323,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuD-p7-JR6">
-                                                <rect key="frame" x="112" y="666" width="192" height="192"/>
+                                                <rect key="frame" x="112" y="649" width="192" height="192"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4D-xK-A3I">
                                                         <rect key="frame" x="0.0" y="3" width="192" height="48"/>
@@ -2932,7 +2911,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDj-hV-4fp">
-                                                <rect key="frame" x="160" y="854" width="144" height="144"/>
+                                                <rect key="frame" x="160" y="837" width="144" height="144"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1K-kF-2AZ">
                                                         <rect key="frame" x="0.0" y="3" width="144" height="48"/>
@@ -3277,7 +3256,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tq4-fW-qy6">
-                                                <rect key="frame" x="77" y="1030" width="167" height="48"/>
+                                                <rect key="frame" x="77" y="1013" width="167" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="VoK-hD-tje"/>
                                                     <constraint firstAttribute="width" constant="167" id="eWm-J4-QOk"/>
@@ -3291,10 +3270,24 @@
                                                     <action selector="breakGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8U-lQ-tUt"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kL-FP-oUh">
+                                                <rect key="frame" x="126.5" y="44" width="67" height="25.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="67" id="nsG-hG-i77"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAC-hR-fZD">
+                                                <rect key="frame" x="22" y="77" width="276" height="30"/>
+                                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="lf9-lV-62X" secondAttribute="trailing" id="0bP-qq-Fw7"/>
                                             <constraint firstItem="tq4-fW-qy6" firstAttribute="top" secondItem="eDj-hV-4fp" secondAttribute="bottom" constant="32" id="1n4-kn-Jic"/>
                                             <constraint firstItem="XAC-hR-fZD" firstAttribute="centerX" secondItem="4kL-FP-oUh" secondAttribute="centerX" id="5Tu-qd-cIt"/>
                                             <constraint firstItem="LuD-p7-JR6" firstAttribute="trailing" secondItem="tjw-Xf-WZY" secondAttribute="trailing" id="8fV-Yk-C29"/>
@@ -3304,16 +3297,14 @@
                                             <constraint firstItem="eDj-hV-4fp" firstAttribute="trailing" secondItem="LuD-p7-JR6" secondAttribute="trailing" id="Ulg-Xg-SQW"/>
                                             <constraint firstItem="LuD-p7-JR6" firstAttribute="top" secondItem="20Q-we-4Wm" secondAttribute="bottom" constant="-5" id="Vz7-L0-0II"/>
                                             <constraint firstItem="eDj-hV-4fp" firstAttribute="top" secondItem="LuD-p7-JR6" secondAttribute="bottom" constant="-4" id="Xk4-Av-kG7"/>
-                                            <constraint firstItem="lf9-lV-62X" firstAttribute="top" secondItem="pVa-9V-Uhr" secondAttribute="top" constant="44" id="dck-e4-CkU"/>
+                                            <constraint firstItem="4kL-FP-oUh" firstAttribute="top" secondItem="pVa-9V-Uhr" secondAttribute="top" constant="44" id="bkS-o6-8Ht"/>
                                             <constraint firstItem="XAC-hR-fZD" firstAttribute="leading" secondItem="pVa-9V-Uhr" secondAttribute="leading" constant="22" id="e3y-mg-ZNI"/>
                                             <constraint firstItem="tq4-fW-qy6" firstAttribute="centerX" secondItem="pVa-9V-Uhr" secondAttribute="centerX" id="e5a-jT-9Rb"/>
                                             <constraint firstItem="20Q-we-4Wm" firstAttribute="trailing" secondItem="tjw-Xf-WZY" secondAttribute="trailing" id="fhw-rk-8KJ"/>
                                             <constraint firstAttribute="bottom" secondItem="tq4-fW-qy6" secondAttribute="bottom" constant="32" id="kyh-q1-tNv"/>
-                                            <constraint firstItem="lf9-lV-62X" firstAttribute="leading" secondItem="pVa-9V-Uhr" secondAttribute="leading" id="n3Z-wy-mNV"/>
-                                            <constraint firstItem="4kL-FP-oUh" firstAttribute="top" secondItem="lf9-lV-62X" secondAttribute="bottom" constant="16" id="okx-4E-XIr"/>
+                                            <constraint firstItem="tjw-Xf-WZY" firstAttribute="top" secondItem="pVa-9V-Uhr" secondAttribute="top" constant="132" id="lkF-nk-RDl"/>
                                             <constraint firstItem="20Q-we-4Wm" firstAttribute="top" secondItem="tjw-Xf-WZY" secondAttribute="bottom" constant="-6" id="tYC-4Y-TBx"/>
                                             <constraint firstItem="tjw-Xf-WZY" firstAttribute="centerX" secondItem="pVa-9V-Uhr" secondAttribute="centerX" id="tzY-TB-A6n"/>
-                                            <constraint firstItem="tjw-Xf-WZY" firstAttribute="top" secondItem="XAC-hR-fZD" secondAttribute="top" constant="36" id="uS7-Su-ymn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -3351,7 +3342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273.75" y="750"/>
+            <point key="canvasLocation" x="-272" y="750"/>
         </scene>
         <!--Next Level View Controller-->
         <scene sceneID="TEW-xJ-GVu">
@@ -3798,7 +3789,6 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="arnament" width="1081" height="59"/>
         <image name="bg.jpg" width="1080" height="1920"/>
         <image name="bg1.jpg" width="1080" height="1920"/>
         <image name="bg2.jpg" width="1080" height="1920"/>

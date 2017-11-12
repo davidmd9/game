@@ -127,8 +127,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if wordsDone{
 //            textField.superview?.superview?.backgroundColor = UIColor.lightGray
             setAllEdetingTextFiled(view: textField.superview!.superview!)
-            //!!!!!!!!!!!!!!!!!!!
-            nextLevel()
         }
         _ = moveToNextLetter(textField: textField)
         
