@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if words[numStr][numCol] != " "{
                 textField.text = words[numStr][numCol]
                 textField.isEnabled = false
-                textField.superview?.backgroundColor = UIColor.yellow
+                textField.superview?.backgroundColor = UIColor.init(red: 1.0, green: 0.8, blue: 0, alpha: 0.8)
             }
             else{
                 textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -83,6 +83,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidChange(_ textField: UITextField) {
+        if (UIApplication.shared.delegate as! AppDelegate).getVibrationEnabled() {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        }
         if textField.text != ""{
             let value = textField.text?[(textField.text?.characters.count)!-1]
             textField.text = value
@@ -92,11 +95,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             textField.text = " "
         }
         let (wordsDone, _, gameDone ) = gameModel.addLetter(letter: textField.text!, letterNumber: textField.tag, wordNumber: (textField.superview?.superview?.tag)!)
-        if (UIApplication.shared.delegate as! AppDelegate).getVibrationEnabled() {
-            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-        }
         if wordsDone{
-            textField.superview?.superview?.backgroundColor = UIColor.lightGray
+//            textField.superview?.superview?.backgroundColor = UIColor.lightGray
             setAllEdetingTextFiled(view: textField.superview!.superview!)
         }
         _ = moveToNextLetter(textField: textField)
@@ -109,6 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func  setAllEdetingTextFiled(view: UIView){
         for view in view.subviews{
             let textFiled = view.subviews[0] as! UITextField
+            textFiled.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 0.8)
             textFiled.isEnabled = false
         }
     }
