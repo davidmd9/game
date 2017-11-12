@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import AudioToolbox
+import AVFoundation
+
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -21,6 +24,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var strViewTab1 = [UIView]()
     var gameModel = GameModel()
     var words = [String]()
+    var player : AVAudioPlayer?
     
     
     override func viewDidLoad() {
@@ -32,6 +36,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         getAllStrTable(table: tab3_View)
         getAllStrTable(table: tab4_View)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (UIApplication.shared.delegate as! AppDelegate).getSoundEnabled(){
+            playSound()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        guard player != nil else {return}
+        if (player?.isPlaying)!{
+            player?.stop()
+        }
     }
     
     //MARK: - Получаем все строки(view) со всех таблиц и каждой view задаем tag = numStr
@@ -73,6 +92,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             textField.text = " "
         }
         let (wordsDone, _, gameDone ) = gameModel.addLetter(letter: textField.text!, letterNumber: textField.tag, wordNumber: (textField.superview?.superview?.tag)!)
+        if (UIApplication.shared.delegate as! AppDelegate).getVibrationEnabled() {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        }
         if wordsDone{
             textField.superview?.superview?.backgroundColor = UIColor.lightGray
             setAllEdetingTextFiled(view: textField.superview!.superview!)
@@ -166,7 +188,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         removeNotificationKeyBoard()
     }
 
-
+    func playSound() {
+        let url = Bundle.main.url(forResource: "music", withExtension: "mp3")
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            
+            player = try AVAudioPlayer(contentsOf: url!)
+            guard let player = player else { return }
+            player.numberOfLoops = -1
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 extension String{
