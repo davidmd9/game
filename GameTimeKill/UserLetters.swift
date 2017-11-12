@@ -40,7 +40,7 @@ class UserLetters {
     }
     
     public func getKeys() -> [aLetter]{
-        if (letters == nil){
+        if (letters.count > 0){
             letters = UserDefaults.standard.array(forKey: UserLetters.KEY) as! [aLetter]
         }
         return letters
